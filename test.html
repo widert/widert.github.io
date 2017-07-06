@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Auto Advance Text-Fields</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('input').keyup(function(){
+		var $this = $(this);
+		var characters = $this.val().length;
+		var maxLength = $this.attr('maxLength');
+		
+		if( characters == maxLength){
+			$this.next().focus();
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<p>
+    Phone Number:
+    <input name="phone1" type="text" maxlength="3" size="1">
+    <input name="phone2" type="text" maxlength="3" size="1">
+    <input name="phone3" type="text" maxlength="4" size="1">
+</p>
+</body>
+</html>
